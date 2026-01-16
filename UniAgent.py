@@ -22,3 +22,5 @@ for name, coltype, *_ in cols: # investigate and find NULL values in each column
     q = f'SELECT AVG(CASE WHEN "{name}" IS NULL THEN 1 ELSE 0 END) FROM data'
     null_rate = con.execute(q).fetchone()[0]
     print(f"- {name} : {coltype} : {null_rate:.3%}")
+
+

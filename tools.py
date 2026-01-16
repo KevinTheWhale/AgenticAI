@@ -22,4 +22,4 @@ def run_query(sql: str) -> list[dict]:
         raise ValueError("Only read-only SELECT queries are allowed.")
 
     result = con.execute(sql).fetchdf()
-    return result.to_dict(orient="records")
+    return result.to_dict(orient="records") # returns a list of dicts
